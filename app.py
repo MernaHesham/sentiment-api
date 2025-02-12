@@ -7,8 +7,7 @@ app = FastAPI()
 model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 
 # Intentional bug: No token truncation for long texts
-model = pipeline("text-classification", model=model_name, tokenizer=model_name)
-
+model = pipeline("text-classification", model=model_name)
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
