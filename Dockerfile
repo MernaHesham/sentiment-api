@@ -1,8 +1,10 @@
-FROM python:3.13.2
+FROM python:3.12.0
 
 # Missing dependency: transformers not pinned, causing conflicts
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
